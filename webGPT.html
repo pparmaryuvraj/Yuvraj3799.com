@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>webGPT</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    #welcome-section {
+      text-align: center;
+    }
+
+    #welcome-text {
+      color: aqua;
+      animation: colorChange 20s infinite alternate;
+    }
+
+    @keyframes colorChange {
+      0% { color: aqua; }
+      50% { color: green; }
+      100% { color: yellow; }
+    }
+
+    #color-options,
+    #background-photo,
+    #photo-section,
+    #video-section {
+      margin-top: 20px;
+    }
+
+    button {
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="welcome-section">
+    <h1 id="welcome-text">Welcome to our website</h1>
+  </div>
+
+  <div id="color-options">
+    <p>Background Color:</p>
+    <button onclick="changeColor('red')">Red</button>
+    <button onclick="changeColor('green')">Green</button>
+    <button onclick="changeColor('aqua')">Aqua</button>
+    <button onclick="changeColor('white')">White</button>
+    <button onclick="changeColor('black')">Black</button>
+    <button onclick="changeColor('golden')">Golden</button>
+  </div>
+
+  <div id="background-photo">
+    <p>Background Photo:</p>
+    <input type="file" id="background-input" accept="image/*">
+  </div>
+
+  <div id="photo-section">
+    <p>Photo Upload:</p>
+    <input type="file" id="photo-input" accept="image/*" multiple>
+  </div>
+
+  <div id="video-section">
+    <p>Video Upload:</p>
+    <input type="file" id="video-input" accept="video/*" multiple>
+  </div>
+
+  <script>
+    function changeColor(color) {
+      document.body.style.backgroundColor = color;
+    }
+
+    document.getElementById('background-input').addEventListener('change', function (event) {
+      const file = event.target.files[0];
+      if (file) {
+        const url = URL.createObjectURL(file);
+        document.body.style.backgroundImage = `url('${url}')`;
+      }
+    });
+
+    // Additional functionality for photo and video uploads can be added here.
+  </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>webGPT</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    #iframe-container {
+      width: 500px; /* Set the width of your container */
+      height: 500px; /* Set the height of your container */
+      margin: 20px auto; /* Adjust margin as needed */
+      overflow: hidden;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="iframe-container">
+    <iframe src="https://www.chatgpt.com" frameborder="0"></iframe>
+  </div>
+
+  <!-- Your existing content goes here -->
+
+  <script>
+    // Your existing JavaScript code goes here
+  </script>
+</body>
+</html>
